@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/register.css}">
+</head>
+<body>
+<div class="register-container">
+    <form class="register-form">
+        <h3 class="title-register">ĐĂNG KÍ TÀI KHOẢN CHAT WEB</h3>
+        <div class="form-group">
+            <label>Họ và tên</label>
+            <input type="text" id="name" />
+        </div>
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" id="username" />
+        </div>
+        <div class="form-group">
+            <label>Mật khẩu</label>
+            <input type="password" id="password" />
+        </div>
+        <div class="form-group">
+            <label>Xác nhận mật khẩu</label>
+            <input type="password" id="cpassword" />
+        </div>
+
+        <button type="button" class="btn-register">Đăng kí</button>
+        <a href="/login" class="btn-move-login">Đăng nhập</a>
+    </form>
+</div>
+</body>
+<script src="/js/register.js"></script>
+</html>

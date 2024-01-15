@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Chat</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+
+<h2>WELCOME TO MY CHAT APP - MADE BY THANH HUNG</h2>
+<div id="container">
+    <div th:if="${#authentication.principal != null}">
+        <p>Welcome, <span class="user-id" th:id="${#authentication.principal.id}" th:text="${#authentication.principal.username}"></span>!</p>
+        <p>Welcome, <span th:text="${#authentication.principal.id}"></span>!</p>
+    </div>
+
+    <div class="chat-container" id="chat-page">
+        <div class="users-list">
+            <div class="users-list-container">
+                <h2>Online Users</h2>
+                <ul id="connectedUsers">
+
+                </ul>
+            </div>
+            <div>
+                <p id="connected-user-fullname"></p>
+                <a class="logout" href="javascript:void(0)" id="logout">Logout</a>
+            </div>
+        </div>
+
+        <div class="chat-area">
+            <div class="chat-area" id="chat-messages">
+            </div>
+
+            <form id="messageForm" name="messageForm" class="hidden">
+                <div class="message-input">
+                    <input autocomplete="off" type="text" id="message1" placeholder="Type your message...">
+                    <button type="button" id="btn-send">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
+</head>
+<body>
+    <div class="login-container">
+        <form th:action="@{/login}" method="post" class="login-form">
+            <h3 class="title-login">ĐĂNG NHẬP CHAT WEB</h3>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="username" name="username" />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="text" id="password" name="password" />
+            </div>
+
+            <button type="submit" class="btn-login">Đăng nhập</button>
+            <a href="/register" class="btn-move-register">Đăng kí</a>
+            <a th:href="@{/oauth2/authorization/google}">Login with Google</a>
+            <a th:href="@{/oauth2/authorization/facebook}">Login with Facebook</a>
+        </form>
+    </div>
+</body>
+
+<script src="/js/login.js"></script>
+</html>
